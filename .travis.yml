@@ -1,8 +1,8 @@
 script:
-  - echo "${KEY}" > ~/.ssh/id_rsa.nonl
-  - cat ~/.ssh/id_rsa.nonl | tr '~' '\n' > ~/.ssh/id_rsa
-  - md5sum ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
+  - echo "${KEY}" > id_rsa.nonl
+  - cat id_rsa.nonl | tr '~' '\n' > id_rsa
+  - md5sum id_rsa
+  - chmod 600 id_rsa
+  - ssh -i id_rsa -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
 after_script:
-  - rm ~/.ssh/id_rsa*
+  - rm id_rsa*
