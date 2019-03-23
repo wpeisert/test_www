@@ -1,5 +1,5 @@
 script:
   - echo "${KEY}" > ~/.ssh/id_rsa
-  - ssh "${CONN}" 'git -C /var/www/test_www pull'
+  - ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
 after_script:
   - rm ~/.ssh/id_rsa
