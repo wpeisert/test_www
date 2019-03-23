@@ -1,5 +1,6 @@
 script:
   - echo "${KEY}" > ~/.ssh/id_rsa
+  - md5sum ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
 after_script:
