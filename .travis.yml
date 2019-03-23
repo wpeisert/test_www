@@ -1,6 +1,5 @@
-before_install:
-  - openssl aes-256-cbc -K $encrypted_72a02b89b1ad_key -iv $encrypted_72a02b89b1ad_iv -in travis.enc -out ~\/travis -d
+before_script:
+  - openssl aes-256-cbc -K $encrypted_72a02b89b1ad_key -iv $encrypted_72a02b89b1ad_iv -in travis.enc -out travis -d
 
 script:
-  - ssh -i ~\/travis -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
-
+  - ssh -i travis -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null "${CONN}" 'git -C /var/www/test_www pull'
