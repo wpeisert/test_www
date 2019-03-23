@@ -1,0 +1,2 @@
+script:
+  - ssh  'bash -s' < local_script.sh
