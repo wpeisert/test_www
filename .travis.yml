@@ -1,2 +1,5 @@
 script:
-  - ssh  'bash -s' < local_script.sh
+  - echo "${KEY}" > ~/.ssh/id_rsa
+  - ssh "${CONN}" 'git -C /var/www/test_www pull'
+after_script:
+  - rm ~/.ssh/id_rsa
