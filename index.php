@@ -3,5 +3,6 @@
 	echo strftime("%Y-%m-%d %T");
 	?>
 
-ABC 123
+ABC 123 456 <br />
+<hr />
 
