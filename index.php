@@ -1,5 +1,5 @@
 <?php
-	echo "PHP - works!!! ";
+	echo "PHP - works!!! in 2021 also";
 	echo strftime("%Y-%m-%d %T");
 	?>
 
